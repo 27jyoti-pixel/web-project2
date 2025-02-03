@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header b {
+            font-size: 2rem;
+        }
+
+        nav {
+            background: #333;
+            padding: 15px;
+            position: relative;
+        }
+
+        nav .menu-icon {
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+
+        #menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: #444;
+            width: 200px;
+            position: fixed;
+            top: 50px;
+            left: 10px;
+            display: none;
+            border-radius: 5px;
+        }
+
+        #menu li {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #menu li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        #menu li:hover {
+            background: #555;
+        }
+
+        #menu.show {
+            display: block;
+        }
+
+        .gallery-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #D3D3D3;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            background: rgb(232, 213, 138);
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            filter: brightness(50%);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            display: block;
+            object-fit: cover;
+            border-bottom: 1px solid #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            nav .menu-icon {
+                display: block;
+            }
+
+            #menu {
+                width: 100%;
+                position: static;
+                background: #333;
+            }
+
+            #menu li {
+                padding: 15px;
+            }
+
+            #menu.show {
+                display: block;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    <script defer>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <b>Our Collections: Gallery</b>
+    </header>
+
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <ul id="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="gallery-title">
+        <h2>Gallery</h2>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="mensweatshirt.jpg" alt="Men's Sweatshirts">
+            <p class="caption">Men's Sweatshirts</p>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-regular fa-bookmark"></i>
+        </div>
+        <div class="gallery-item">
+            <img src="kidcollection.jpg" alt="Girls collection">
+            <p class="caption">Girls collection</p>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-regular fa-bookmark"></i>
+        </div>
+        <div class="gallery-item">
+            <img src="kid2collection.jpg" alt="Boys collection">
+            <p class="caption">Boys collection</p>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-regular fa-bookmark"></i>
+        </div>
+        <div class="gallery-item">
+            <img src="womensweatshirt.jpg" alt="Women's Sweatshirts">
+            <p class="caption">Women's Sweatshirts</p>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-regular fa-bookmark"></i>
+        </div>
+        <div class="gallery-item">
+            <img src="kurtasets.jpg" alt="Kurta Sets">
+            <p class="caption">Kurta Sets</p>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-regular fa-bookmark"></i>
+        </div>
+        <div class="gallery-item">
+            <img src="saree.jpg" alt="Sarees">
+            <p class="caption">Sarees</p>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-regular fa-bookmark"></i>
+        </div>
+        <div class="gallery-item">
+            <img src="dresses.jpg" alt="Dresses">
+            <p class="caption">Dresses</p>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-regular fa-bookmark"></i>
+        </div>
+        <div class="gallery-item">
+            <img src="denim.jpg" alt="Denim">
+            <p class="caption">Denim</p>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-regular fa-bookmark"></i>
+        </div>
+        <div class="gallery-item">
+            <img src="tshirt.jpg" alt="T-Shirts and Polos">
+            <p class="caption">T-Shirts and Polos</p>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-regular fa-bookmark"></i>
+        </div>
+        <div class="gallery-item">
+            <img src="shirt.jpg" alt="Shirts">
+            <p class="caption">Shirts</p>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-regular fa-bookmark"></i>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Shiv Deep Collection. All rights reserved</p>
+    </footer>
+</body>
+</html>
